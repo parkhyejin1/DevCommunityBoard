@@ -1,0 +1,102 @@
+   *{padding:0; margin:0; box-sizing: border-box;}
+        #wrap{
+           width:100%;
+           position:relative;
+        }
+        #list_wrap{
+            width:1200px;
+            position:relative;
+            margin:30px auto;
+            background:#e6e6e6;
+            padding:20px;
+            border-radius: 10px;
+        }
+        .list_top{
+            display: flex;
+            column-gap: 20px;
+            align-items: center;
+        }
+        .list_top a{
+            padding:5px 20px;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    flex-shrink: 0;    display: inline-block;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    font-family: Noto Sans KR, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #b63939;
+    text-decoration: none;
+        }
+.board_title{
+	position:relative;
+	  width:1200px;
+	  margin:0 auto;
+	display:flex;
+	justify-content: start;
+	align-items: center;
+	padding:30px;
+}
+.board_title img{
+	width:200px;
+}
+.title_sub{
+	position:absolute;
+	bottom:50px;
+	left:30px;
+	font-weight:400;
+	font-size:12px;
+}
+    .list_content{
+        margin-top:15px;
+        background:#fff;
+        border-radius: 5px;
+        box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+        padding:24px;
+    }    
+    .list_content .list_header{
+        display:flex;
+        text-align: center;
+        font-size:20px;
+        font-weight:800;
+        padding:10px 0;
+        border-bottom:1px solid #000;
+    }
+    .list_content .num{width:10%; text-align: center;}
+    .list_content .title{width:50%; padding-left:10px;}
+    .list_content .regDate{width:20%;text-align: center;}
+    .list_content .mdactive{width:20%;}
+    .list_content .list_body .item{
+        display:flex;
+        border-bottom:1px solid #aaa;
+        align-items: center;
+        padding:10px 0;
+    }
+       .list_content .list_body .item .title a{
+		   text-decoration: none;
+		   }
+	   .list_content .list_body .item .mdactive{
+		   display:flex;
+		   align-items: center;
+		   column-gap: 10px;;
+		   justify-content: center;
+		   }		   
+	.list_content .list_body .item .mdactive a{
+			text-decoration: none;
+			padding:3px 15px;
+			font-size:20px;
+			font-weight:700;
+			color:#fff;
+			border-radius: 5px;
+		}
+	.list_content .list_body .item .mdactive a:nth-child(1){
+		background:#ccc;
+	}
+	.list_content .list_body .item .mdactive a:nth-child(2){
+		background:#b63939;
+	}
+		
+			   
+		   

@@ -1,0 +1,70 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Board</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500%2C700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR%3A700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A500" />
+    <link rel="stylesheet" href="/css/register.css" />
+</head>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+var formObj = $("#board");
+$("#btnDelete").on("click", function() {
+formObj.attr("action", "/delete");
+formObj.attr("method", "post");
+formObj.submit();
+});
+
+$("#btnList").on("click", function() {
+self.location = "/";
+});
+
+});
+</script>
+<body>
+	
+ <div id="wrap">
+	 <div class="board_title">
+				<h2 class="mtitle">개발자 커뮤니티</h2>
+				<img src="/assets/main.jpg" alt="main">
+				<h3 class="title_sub">다양한 사람과 만나는 소통의 장</h3>
+			</div>
+        <div id="list_wrap">
+            <div class="list_top">
+                <h2>Board Delete</h2>
+            </div>
+            <div class="list_content">
+               <form id="board" action="list.html" th:action="@{delete}" th:object="${board}" method="POST">
+					<input type="hidden" name="boardNo" th:field="*{boardNo}">
+					<table >
+						<tr>
+							<td>Title</td>
+							<td><input type="text" name="title" th:field="*{title}" readonly/></td>
+							
+						</tr>
+						<tr>
+							<td>Writer</td>
+							<td><input type="text" name="writer" th:field="*{writer}" readonly/></td>
+						</tr>
+						<tr>
+							<td>Content</td>
+							<td><textarea name="content" th:field="*{content}" readonly></textarea></td>
+						</tr>
+					</table>
+				</form>
+				<div>
+					<button type="submit" id="btnDelete" class="bt">Delete</button>
+					<button type="submit" id="btnList" class="listbt">List</button>
+				</div>
+            </div>
+        </div>
+    </div>	
+
+</body>
+</html>

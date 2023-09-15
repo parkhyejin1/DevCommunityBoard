@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500%2C700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR%3A700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A500" />
+    <link rel="stylesheet" href="/css/board.css" />
+</head>
+<body>
+    <div id="wrap">
+		<div class="board_title">
+				<h2 class="mtitle">개발자 커뮤니티</h2>
+				<img src="/assets/main.jpg" alt="main">
+				<h3 class="title_sub">다양한 사람과 만나는 소통의 장</h3>
+			</div>
+        <div id="list_wrap">
+			
+            <div class="list_top">
+                <h2>Board List</h2>
+                <a href="/register">글쓰기</a>
+            </div>
+            <div class="list_content">
+                <div class="list_header">
+                    <div class="num">번호</div>
+                    <div class="title">제목</div>
+                    <div class="regDate">작성일</div>
+                    <div class="mdactive">수정/삭제</div>
+                </div>
+                <div class="list_body">
+					<div th:if="${#lists.isEmpty(list)}">
+						등록된 글이 없습니다.
+					</div>
+					
+                    <div class="item" th:each="board:${list}">
+                        <div class="num" th:text="${board.boardNo}">${board.boardNo}</div>
+                        <div class="title"><a href="read.html" th:href="@{|read?boardNo=${board.boardNo}|}" th:text="${board.title}">${board.title}</a></div>
+                        <div class="regDate" th:text="${#temporals.format(board.regDate,'yyyy-MM-dd')}">${board.regDate}</div>
+                        <div class="mdactive">
+							<a href="update.html" th:href="@{|update?boardNo=${board.boardNo}|}">수정</a>  
+                        	<a href="delete.html" th:href="@{|delete?boardNo=${board.boardNo}|}">삭제</a>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
